@@ -1,14 +1,13 @@
 {
-  "name": "patrick-test",
+  "name": "tutorial",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "Patrick Jose",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
-  }
+    "express": "4.13.3"
+  },
+  "author": "Kathryn Hodge",
+  "license": "ISC"
 }
