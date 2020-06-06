@@ -1,5 +1,5 @@
 {
-  "name": "tutorial",
+  "name": "AI Rap Generator",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,6 +9,6 @@
     "express": "^4.16.3",
     "socket.io": "^2.1.1"
   },
-  "author": "Kathryn Hodge",
+  "author": "Patrick Jose",
   "license": "ISC"
 }
