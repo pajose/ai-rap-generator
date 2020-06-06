@@ -10,7 +10,7 @@ var server = http.Server(app);
 app.get("/", function(req, res) {
 	res.render("index");
 })
-app.use(express.static('__dirname'));
+app.use(express.static(__dirname));
 
 server.listen(PORT, function() {
   console.log('Patrick\'s app running');
