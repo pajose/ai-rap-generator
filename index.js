@@ -12,11 +12,12 @@ app.set("view engine", "ejs");
 
 // Run the python script at the root
 app.get('/', (req, res) => {
+	// PythonShell.run('main.py', options, function (err) {
+	// 	if (err) throw err;
+	// 	console.log('Finished running the code');
+	// });
+
 	res.render('index');
-	PythonShell.run('main.py', options, function (err) {
-		if (err) throw err;
-		console.log('Finished running the code');
-	});
 })
 
 // Visit this route to view the contents of the rap file
@@ -24,8 +25,7 @@ app.get('/generated', (req, res) => {
 	const filename = 'kendrick_lamar_neural_network_rap.txt';
 	fs.readFile(filename, 'utf8', (e, data) => {
 			if (e) throw e;
-			console.log('OK: ' + filename);
-  		console.log(data)
+			// console.log('OK: ' + filename);
 			res.write(data);
 			res.end();
 	});
