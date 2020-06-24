@@ -1,8 +1,17 @@
+body {
+  background-color: #B2B2B2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .welcome {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
 }
 
 .rap-container {
@@ -10,15 +19,25 @@
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  height: 90vh;
+  flex: 1;
 }
 
 .bars {
-  flex-basis: 1;
-  border: 1px solid black;
-  margin-bottom: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0 2px;
 }
 
-.button-container {
-  flex-basis: 1;
+.bar {
+  /* margin-bottom: 0; */
+  line-height: 5px;
+}
+
+.generate-button {
+  background-color: green;
+  border: 1px green solid;
+  padding: 0.5rem;
+  border-radius: 2px;
 }
