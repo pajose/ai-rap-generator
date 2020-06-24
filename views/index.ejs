@@ -13,38 +13,16 @@
 	</div>
 	<div class="rap-container">
 		<div class="bars">
-			<!-- <p class="bar"> <%= bars %> </p> -->
-			<p class="bar">Ask me to spit some bars! My favorite rapper is Kendrick Lamar.</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
-				<p class="bar">The way the world up when i got key to my dark thoughts</p>
+			<% bars.forEach(bar => { %>
+        <p class="bar"><%=bar%></p>
+      <% }); %>
 		</div>
+		<form method="POST">
 			<div class="button-container">
-				<button class="generate-button">Spit Bars</button>
+				<button type="submit" class="generate-button" formaction="/generaterap/markov">Spit Markov Bar</button>
+				<button type="submit" class="generate-button" formaction="/generaterap/neuralnetwork">Spit Neural Network Bar</button>
 			</div>
-		</div>
+		</form>
 	</div>
 </body>
 

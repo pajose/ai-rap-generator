@@ -11,28 +11,43 @@ app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
 
+let bars = ["Ask me to spit some bars! My favorite rapper is Kendrick Lamar."];
+
 // Run the python script at the root
 app.get('/', (req, res) => {
+	res.render("index", {bars : bars});
+})
+
+// Generate new markov rap file
+app.post('/generaterap/markov', (req, res) => {
+	// TODO: Run main.py with markov argument to only generate markov lyric txt file
+
 	// PythonShell.run('main.py', options, function (err) {
 	// 	if (err) throw err;
 	// 	console.log('Finished running the code');
 	// });
-	fs.readFile("kendrick_lamar_base_markov_rap.txt", "utf-8", (err, data) => {
-		console.log(typeof data);
-		res.render('index', {bars : data});
-	})
 
-})
-
-// Visit this route to view the contents of the rap file
-app.get('/generated', (req, res) => {
-	const filename = 'kendrick_lamar_neural_network_rap.txt';
-	fs.readFile(filename, 'utf8', (e, data) => {
-			if (e) throw e;
-			// console.log('OK: ' + filename);
-			res.write(data);
-			res.end();
+	fs.readFile("kendrick_lamar_base_markov_rap.txt", 'utf-8', (err, data) => {
+			if (err) throw err;
+			bars = data.split("\n");
 	});
+	res.redirect("/");
+});
+
+// Generate new neural network rap file
+app.post('/generaterap/neuralnetwork', (req, res) => {
+	// TODO: Run main.py with neural network argument to only generate markov lyric txt file
+
+	// PythonShell.run('main.py', options, function (err) {
+	// 	if (err) throw err;
+	// 	console.log('Finished running the code');
+	// });
+
+	fs.readFile("kendrick_lamar_neural_network_rap.txt", 'utf-8', (err, data) => {
+			if (err) throw err;
+			bars = data.split("\n");
+	});
+	res.redirect("/");
 });
 
 app.listen(port, () => {
