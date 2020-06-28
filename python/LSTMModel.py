@@ -423,7 +423,7 @@ class LSTMModel:
             
             line, score = line_scores[0][0], line_scores[0][1]
             cleaned_line = line.strip(" -',.:&").capitalize()
-            print(cleaned_line) #print the line to the console if desired
+            #print(cleaned_line) #print the line to the console if desired
             rap.append(cleaned_line)
     
             best_line_index = all_lines.index(line)

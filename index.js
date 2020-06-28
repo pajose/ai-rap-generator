@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 let {PythonShell} = require('python-shell');
-let options = { options: ['-u'], scriptPath: './python' }
+let options = { options: ['-u'],
+				scriptPath: './python',
+				args: []};
 
 const port = process.env.PORT || 8080;
 
@@ -20,12 +22,15 @@ app.get('/', (req, res) => {
 
 // Generate new markov rap file
 app.post('/generaterap/markov', (req, res) => {
-	// TODO: Run main.py with markov argument to only generate markov lyric txt file
 
-	// PythonShell.run('main.py', options, function (err) {
-	// 	if (err) throw err;
-	// 	console.log('Finished running the code');
-	// });
+	options.args[0] = "markov";
+
+	console.log('Generating Markov model lyrics...');
+
+	PythonShell.run('main.py', options, function (err,results) {
+		if (err) throw err;
+		console.log('Finished running the code');
+	});
 
 	fs.readFile("kendrick_lamar_base_markov_rap.txt", 'utf-8', (err, data) => {
 			if (err) throw err;
@@ -36,12 +41,15 @@ app.post('/generaterap/markov', (req, res) => {
 
 // Generate new neural network rap file
 app.post('/generaterap/neuralnetwork', (req, res) => {
-	// TODO: Run main.py with neural network argument to only generate markov lyric txt file
 
-	// PythonShell.run('main.py', options, function (err) {
-	// 	if (err) throw err;
-	// 	console.log('Finished running the code');
-	// });
+	options.args[0] = "lstm"
+
+	console.log("Generating LSTM Neural Network lyrics...")
+
+	PythonShell.run('main.py', options, function (err,results) {
+		if (err) throw err;
+		console.log('Finished running the code');
+	});
 
 	fs.readFile("kendrick_lamar_neural_network_rap.txt", 'utf-8', (err, data) => {
 			if (err) throw err;
