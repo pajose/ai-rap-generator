@@ -1,0 +1,6 @@
+markovify
+pronouncing
+numpy
+keras
+tensorflow
+nltk
