@@ -29,14 +29,16 @@ app.post('/generaterap/markov', (req, res) => {
 
 	PythonShell.run('main.py', options, function (err,results) {
 		if (err) throw err;
-		console.log('Finished running the code');
-	});
 
-	fs.readFile("kendrick_lamar_base_markov_rap.txt", 'utf-8', (err, data) => {
+		fs.readFile("kendrick_lamar_base_markov_rap.txt", 'utf-8', (err, data) => {
 			if (err) throw err;
 			bars = data.split("\n");
+		});
+
+		console.log('Finished running the code');
+
+		res.redirect("/");
 	});
-	res.redirect("/");
 });
 
 // Generate new neural network rap file
@@ -46,16 +48,18 @@ app.post('/generaterap/neuralnetwork', (req, res) => {
 
 	console.log("Generating LSTM Neural Network lyrics...")
 
-	PythonShell.run('main.py', options, function (err,results) {
+	PythonShell.run('main.py', options, function (err, results) {
 		if (err) throw err;
-		console.log('Finished running the code');
-	});
 
-	fs.readFile("kendrick_lamar_neural_network_rap.txt", 'utf-8', (err, data) => {
+		fs.readFile("kendrick_lamar_neural_network_rap.txt", 'utf-8', (err, data) => {
 			if (err) throw err;
 			bars = data.split("\n");
+		});
+
+		console.log('Finished running the code');
+
+		res.redirect("/");
 	});
-	res.redirect("/");
 });
 
 app.listen(port, () => {
