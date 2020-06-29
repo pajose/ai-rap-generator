@@ -2,5 +2,5 @@ markovify
 pronouncing
 numpy
 keras
-tensorflow
+tensorflow-cpu
 nltk
