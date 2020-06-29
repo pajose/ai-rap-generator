@@ -88,7 +88,7 @@ class BaseMarkovModel:
         ''' Creates a dictionary of tagged tokens and saves it into a pkl file'''
         taggedTokens = self.POStagging(tokens)
         output = open('taggedTokens.pkl', 'wb')
-        dump(taggedTokens, output, -1)
+        dump(taggedTokens, output)
         output.close()
         
         return taggedTokens
