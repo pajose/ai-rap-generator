@@ -3,4 +3,4 @@ pronouncing
 numpy
 keras
 tensorflow-cpu
-nltk
+nltk==3.5
