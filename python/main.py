@@ -24,7 +24,7 @@ if __name__ == '__main__':
     if(model_to_run == "markov"):
         # Base Markov Model
         print("~~~~~~~~~~~~~~BASE MARKOV MODEL~~~~~~~~~~~~~~")
-        BaseModel = BaseMarkovModel(file_path,taggedTokens)
+        BaseModel = BaseMarkovModel(file_path)
         final_rap = ""
         for i in range(3):
             verse = BaseModel.createVerse(9, 6)
